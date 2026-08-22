@@ -24,7 +24,14 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="assets/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-<!-- Meta Pixel — mesmo id da página antiga, pra não perder a medição dos anúncios -->
+<!-- Meta Pixel — DOIS conjuntos de dados, de propósito.
+     4529677620612420: o pixel herdado da página antiga. Ele NAO fica na Business
+     Manager da Orion (responde "sem permissao" ate com token de admin de anuncios),
+     entao as campanhas do LianFit nao conseguem usar nada do que ele coleta.
+     Fica porque nao custa nada e pode estar servindo a quem o criou.
+     1631513614991071: o conjunto de dados da Orion, o MESMO que recebe as conversas
+     do WhatsApp pela Conversions API. A Meta junta site + conversa + venda num
+     dataset so, e e este que as campanhas enxergam. -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -33,6 +40,8 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
 (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('set','autoConfig',false,'4529677620612420');
 fbq('init','4529677620612420');
+fbq('set','autoConfig',false,'1631513614991071');
+fbq('init','1631513614991071');
 fbq('track','PageView');
 </script>
 
