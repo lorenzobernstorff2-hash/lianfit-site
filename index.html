@@ -317,10 +317,13 @@ footer b{color:rgba(245,241,232,.86);font-weight:600}
 </footer>
 
 <script>
-// Pixel: marca o clique no WhatsApp como Lead, que e o unico evento de conversao que a pagina tem.
+// Pixel: o clique no WhatsApp e Contact, nao Lead. Lead de verdade nasce no
+// servidor, quando a qualificacao fecha (LeadSubmitted via Conversions API,
+// desde 22/08/2026) — chamar o clique de Lead inflava o numero que a campanha
+// usa pra decidir, e os dois competiam.
 document.querySelectorAll('[data-wa]').forEach(function(a){
   a.addEventListener('click', function(){
-    if (window.fbq) fbq('track', 'Lead');
+    if (window.fbq) fbq('track', 'Contact');
   });
 });
 </script>
