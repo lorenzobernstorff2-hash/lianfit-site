@@ -4,3 +4,5 @@ FROM nginx:1.27-alpine
 # os arquivos moram num diretorio com esse nome, e nao na raiz do html.
 COPY index.html /usr/share/nginx/html/ofertawhats/index.html
 COPY assets/ /usr/share/nginx/html/ofertawhats/assets/
+# Página de retorno do checkout por cartão (Asaas manda o pagador pra cá).
+COPY obrigado/index.html /usr/share/nginx/html/ofertawhats/obrigado/index.html

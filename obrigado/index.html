@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pagamento recebido — LianFit</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/simbolo.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  @font-face{font-family:"Archivo";src:url("../assets/archivo-var-latin.woff2") format("woff2");font-weight:100 900;font-display:swap}
+  :root{--papel:#F5F1E8;--tinta:#0F1420;--noite:#16233B;--violeta:#6B4FB6;--cinza:#5B6573}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--papel);color:var(--tinta);font-family:"Archivo","Helvetica Neue",Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+  main{min-height:100svh;display:grid;place-items:center;padding:32px 20px}
+  .cartao{max-width:440px;width:100%;text-align:center}
+  .simbolo{width:56px;height:56px;margin:0 auto 20px;display:block}
+  .olho{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--cinza);margin:0 0 12px}
+  h1{font-size:clamp(28px,7vw,36px);line-height:1.08;font-weight:800;letter-spacing:-.02em;margin:0 0 14px;text-wrap:balance}
+  p{margin:0 0 22px;color:var(--noite);max-width:32em;margin-inline:auto}
+  .cta{display:inline-block;background:var(--violeta);color:#fff;text-decoration:none;font-weight:700;font-size:17px;padding:16px 26px;border-radius:12px;box-shadow:0 6px 18px rgba(107,79,182,.28)}
+  .cta:hover{background:#5A41A0}
+  .cta:focus-visible{outline:3px solid var(--noite);outline-offset:3px}
+  .nota{font-size:13px;color:var(--cinza);margin:18px 0 0}
+  footer{margin-top:40px;font-size:12px;color:var(--cinza)}
+</style>
+</head>
+<body>
+<main>
+  <div class="cartao">
+    <img class="simbolo" src="../assets/simbolo.svg" alt="">
+    <p class="olho">Pagamento recebido</p>
+    <h1>Tá pago. Agora volta pro WhatsApp.</h1>
+    <p>O LianFit já viu que entrou e tá te esperando lá pra montar teu treino e tua dieta. É só voltar pra conversa.</p>
+    <a class="cta" href="https://wa.me/5547996182395?text=paguei%20no%20cart%C3%A3o">Voltar pro WhatsApp</a>
+    <p class="nota">Se a conversa não abrir sozinha, manda "paguei" pro LianFit no WhatsApp que ele confere na hora.</p>
+    <footer>Orion Tecnologia · CNPJ 64.512.751/0001-70 · Cobrança processada pelo Asaas</footer>
+  </div>
+</main>
+</body>
+</html>
