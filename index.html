@@ -2,11 +2,11 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>LianFit — treino e dieta que encaixam na tua vida | R$ 19,90/mês</title>
 <meta name="description" content="Treino e dieta sob medida no teu WhatsApp, 24h por dia. Monta teu plano e reescreve na hora quando a vida muda de ideia. R$ 19,90 por mês, sem fidelidade.">
 <link rel="canonical" href="https://lianfit.com.br/ofertawhats/">
-<meta name="theme-color" content="#16233B">
+<meta name="theme-color" content="#0F1729">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lianfit.com.br/ofertawhats/">
@@ -23,6 +23,7 @@
 <link rel="icon" href="assets/simbolo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="assets/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fotos/hero-academia.jpg" as="image">
 
 <!-- Meta Pixel — DOIS conjuntos de dados, de propósito.
      4529677620612420: o pixel herdado da página antiga. Ele NAO fica na Business
@@ -45,6 +46,16 @@ fbq('init','1631513614991071');
 fbq('track','PageView');
 </script>
 
+<!-- Progressive enhancement: a classe `js` liga a experiencia de rolagem (Lenis + GSAP).
+     Sem JS, ou com "reduzir movimento" ligado no sistema, a pagina fica no layout
+     estatico completo, com todo o conteudo visivel. -->
+<script>
+(function(){
+  var reduz = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduz) document.documentElement.classList.add('js');
+})();
+</script>
+
 <style>
 @font-face{font-family:Archivo;src:url(assets/archivo-var-latin.woff2)format("woff2");
  font-weight:100 900;font-stretch:62% 125%;font-display:swap}
@@ -53,247 +64,393 @@ fbq('track','PageView');
 @font-face{font-family:"Plex Mono";src:url(assets/plexmono-600-latin.woff2)format("woff2");
  font-weight:600;font-display:swap}
 
+/* A pagina inteira vive na NOITE da marca. Fotos de gente treinando, sempre com o azul
+   por cima; o papel entra como bloco que cresce e encaixa; o violeta e o unico acento.
+   Geometria: blocos e fotos com o canto chanfrado (o encaixe), botoes em pilula.
+   Tipografia: Archivo variavel com o eixo de largura animado; Plex Mono so nos numeros.
+   Fotos: Unsplash (licenca livre pra uso comercial), em assets/fotos/. */
 :root{
- --noite:#16233B; --tinta:#0F1420; --violeta:#6B4FB6; --papel:#F5F1E8; --cinza:#5B6573;
- --linha:rgba(245,241,232,.14); --linha-clara:rgba(15,20,32,.12);
- --larg:1080px; --raio:16px;
+ --noite:#16233B; --fundo:#0F1729; --noite-clara:#1D2D4E;
+ --papel:#F5F1E8; --tinta:#0F1420; --violeta:#6B4FB6; --violeta-clara:#A98CF0;
+ --texto:#F5F1E8; --texto-suave:rgba(245,241,232,.68); --linha:rgba(245,241,232,.14);
+ --larg:1180px; --chanfro:34px; --topo:72px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--papel);color:var(--tinta);
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;background:var(--fundo)}
+html,body{overflow-x:clip}
+body{background:var(--fundo);color:var(--texto);
  font-family:Archivo,system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
- font-size:17px;line-height:1.55;font-synthesis:none}
-img,svg{max-width:100%;display:block}
+ font-size:17px;line-height:1.5;font-synthesis:none}
+img,svg{max-width:100%;display:block;height:auto}
 a{color:inherit}
 .env{width:min(100% - 40px,var(--larg));margin-inline:auto}
-section{padding:76px 0}
-.escuro{background:var(--noite);color:var(--papel)}
-.mono{font-family:"Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+section{padding:96px 0;position:relative}
+h1,h2,h3{line-height:.98;letter-spacing:-.03em;font-weight:800}
+h1{font-size:clamp(3rem,9vw,7.6rem);max-width:9ch;text-wrap:balance}
+h2{font-size:clamp(2.2rem,6vw,5rem);max-width:12ch;text-wrap:balance}
+h3{font-size:clamp(1.6rem,3.6vw,3rem);letter-spacing:-.025em}
+p{max-width:60ch}
+.sub{font-size:clamp(1.1rem,1.9vw,1.35rem);color:var(--texto-suave);margin-top:22px;max-width:40ch;line-height:1.45}
+.encaixe{clip-path:polygon(0 0,calc(100% - var(--chanfro)) 0,100% var(--chanfro),100% 100%,0 100%)}
+.palavra{display:inline-block;font-variation-settings:"wdth" 100}
 
-h1,h2,h3{line-height:1.1;letter-spacing:-.02em;font-weight:700}
-h1{font-size:clamp(2.4rem,7vw,4.1rem)}
-h2{font-size:clamp(1.8rem,4.2vw,2.6rem)}
-h3{font-size:1.06rem;letter-spacing:-.01em}
-.olho{font-family:"Plex Mono",monospace;font-size:.72rem;letter-spacing:.16em;
- text-transform:uppercase;color:var(--violeta);font-weight:600;margin-bottom:14px}
-.escuro .olho{color:#A98CF0}
-.sub{font-size:clamp(1.02rem,2.1vw,1.22rem);color:var(--cinza);max-width:58ch;margin-top:16px}
-.escuro .sub{color:rgba(245,241,232,.72)}
+/* grao fixo, so na camada de cima */
+body::after{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.07;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+ mix-blend-mode:soft-light}
 
-/* CTA */
-.cta{display:inline-flex;align-items:center;gap:10px;background:var(--violeta);color:#fff;
- text-decoration:none;font-weight:700;font-size:1.02rem;padding:16px 26px;border-radius:999px;
- border:0;transition:transform .12s ease,filter .12s ease}
-.cta:hover{filter:brightness(1.08);transform:translateY(-1px)}
-.cta.vazio{background:transparent;color:inherit;border:1.5px solid currentColor}
-.cta-nota{font-size:.86rem;color:var(--cinza);margin-top:12px}
-.escuro .cta-nota{color:rgba(245,241,232,.6)}
+/* botao: pilula, um rotulo so na pagina inteira */
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--papel);color:var(--tinta);
+ text-decoration:none;font-weight:700;font-size:1.05rem;padding:18px 30px;border-radius:999px;border:0;cursor:pointer;
+ white-space:nowrap;transition:transform .15s ease,background .15s ease}
+.cta:hover{background:#fff;transform:translateY(-1px)}
+.cta:active{transform:translateY(1px)}
+.cta:focus-visible{outline:3px solid var(--violeta-clara);outline-offset:3px}
+.cta.violeta{background:var(--violeta);color:#fff}
+.cta.violeta:hover{background:#7A5DCB}
 
-/* topo */
-header{position:sticky;top:0;z-index:20;background:rgba(22,35,59,.92);
- backdrop-filter:blur(10px);border-bottom:1px solid var(--linha)}
-header .env{display:flex;align-items:center;justify-content:space-between;
- gap:16px;padding-block:14px}
-header img{height:30px;width:auto}
-header .cta{padding:11px 18px;font-size:.92rem}
+/* topo fixo */
+header{position:fixed;top:0;left:0;right:0;z-index:40;padding-top:env(safe-area-inset-top,0px)}
+header .env{display:flex;align-items:center;justify-content:space-between;gap:16px;height:var(--topo)}
+header img{height:28px;width:auto}
+header .lockup-noite{display:none}
+header.sobre-papel .lockup-papel{display:none}
+header.sobre-papel .lockup-noite{display:block}
+header .cta{padding:11px 20px;font-size:.95rem}
+header.sobre-papel .cta{background:var(--violeta);color:#fff}
 
-/* hero */
-.hero{background:var(--noite);color:var(--papel);padding:64px 0 84px;
- border-bottom:1px solid var(--linha)}
-.hero .env{display:grid;gap:44px;grid-template-columns:1fr}
-.hero h1 em{font-style:normal;color:#A98CF0}
-.preco-linha{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:26px 0 22px}
-.preco-linha b{font-family:"Plex Mono",monospace;font-size:clamp(1.9rem,5vw,2.5rem);
- font-weight:600;letter-spacing:-.03em}
-.preco-linha span{color:rgba(245,241,232,.66);font-size:.98rem}
-.selos{display:flex;gap:8px;flex-wrap:wrap;margin-top:26px}
-.selo{font-family:"Plex Mono",monospace;font-size:.74rem;letter-spacing:.04em;
- border:1px solid var(--linha);border-radius:999px;padding:7px 13px;
- color:rgba(245,241,232,.78)}
+/* hero: foto de tela cheia, azul por cima, o L se montando na direita */
+.hero{min-height:100dvh;display:grid;align-items:end;padding:calc(var(--topo) + 40px) 0 64px;overflow:hidden;isolation:isolate}
+.hero-foto{position:absolute;inset:0;z-index:-2}
+.hero-foto img{width:100%;height:100%;object-fit:cover;object-position:62% 40%;filter:saturate(.82) contrast(1.06);will-change:transform}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;
+ background:radial-gradient(52% 40% at 100% 0%,rgba(15,23,41,.96),rgba(15,23,41,0) 72%),
+            linear-gradient(90deg,rgba(15,23,41,.92) 0%,rgba(15,23,41,.62) 45%,rgba(15,23,41,.25) 100%),
+            linear-gradient(180deg,rgba(15,23,41,.35) 0%,rgba(15,23,41,0) 30%,rgba(15,23,41,.55) 80%,var(--fundo) 100%)}
+.hero .env{display:grid;grid-template-columns:1fr;gap:28px;align-items:end}
+.hero .cta{margin-top:30px}
+.simbolo{width:min(34vw,300px);aspect-ratio:1;justify-self:end;align-self:end;opacity:.95}
+.simbolo svg{width:100%;height:100%;overflow:visible}
+.simbolo path{transform-box:fill-box;transform-origin:center}
 
-/* conversa */
-.fone{background:#0B1220;border:1px solid var(--linha);border-radius:22px;padding:18px 16px 22px;
- max-width:420px;width:100%;justify-self:center}
-.fone-topo{display:flex;align-items:center;gap:10px;padding:0 4px 14px;
- border-bottom:1px solid var(--linha);margin-bottom:16px}
-.fone-topo img{height:30px;width:30px;background:var(--noite);border-radius:50%;padding:4px}
-.fone-topo b{font-size:.94rem}
-.fone-topo small{display:block;color:#4ADE80;font-size:.72rem;font-weight:500}
-.bolha{max-width:86%;padding:11px 14px;border-radius:16px;font-size:.94rem;line-height:1.45;
- margin-bottom:9px}
-.dele{background:#1E2E4A;border-bottom-left-radius:5px}
-.meu{background:var(--violeta);color:#fff;margin-left:auto;border-bottom-right-radius:5px}
-.anexo{background:#243450;border-radius:10px;padding:9px 12px;font-size:.82rem;
- color:rgba(245,241,232,.8);margin-bottom:9px;max-width:86%;margin-left:auto;
- font-family:"Plex Mono",monospace}
+/* faixa de gente: duas fileiras passando em sentidos opostos */
+.gente{padding:64px 0 0}
+.gente .env p{color:var(--texto-suave);font-size:1.05rem;max-width:52ch}
+.faixa{margin-top:28px;overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(to right,transparent,#000 6%,#000 94%,transparent)}
+.faixa .trilho{display:flex;gap:16px;width:max-content}
+.faixa .trilho + .trilho{margin-top:16px}
+.faixa img{height:min(34vw,260px);width:auto;filter:saturate(.85);--chanfro:22px}
+.js .faixa .trilho{animation:passa 46s linear infinite}
+.js .faixa .trilho.volta{animation-direction:reverse;animation-duration:54s}
+@keyframes passa{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* grades */
-.grade{display:grid;gap:18px;margin-top:40px;
- grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-/* 4 passos: cabe a linha inteira em vez de deixar um card orfao embaixo */
-.grade.quatro{grid-template-columns:repeat(auto-fit,minmax(212px,1fr))}
-.card{border:1px solid var(--linha-clara);border-radius:var(--raio);padding:24px;
- background:#fff}
-.escuro .card{background:rgba(245,241,232,.045);border-color:var(--linha)}
-.card p{margin-top:9px;color:var(--cinza);font-size:.96rem}
-.escuro .card p{color:rgba(245,241,232,.7)}
-.card .num{font-family:"Plex Mono",monospace;color:var(--violeta);font-size:.8rem;
- font-weight:600;display:block;margin-bottom:12px}
-.escuro .card .num{color:#A98CF0}
+/* capitulo: o bloco de papel que cresce e encaixa, com as seis cenas dentro */
+.capitulo-cenas{padding:96px 0 0}
+.manifesto{display:none}
+.palco{background:var(--papel);color:var(--tinta);padding:40px 28px 36px;margin:0 20px}
+.palco h2{font-size:clamp(1.9rem,4.6vw,3.6rem);color:var(--tinta)}
+.palco .intro{color:#4B5563;margin-top:12px;font-size:1.05rem;max-width:52ch}
+.palco{display:grid;gap:28px}
+.legendas{display:grid;gap:12px;margin-top:22px}
+.legenda{font-size:1rem;line-height:1.4;max-width:40ch;color:#1F2937}
+.legenda .num{display:block;font-family:"Plex Mono",monospace;font-weight:600;color:var(--violeta);font-size:.85rem;margin-bottom:4px}
+.progresso{display:none}
+.zap .conversas{display:flex;flex-direction:column;gap:18px;padding:0 0 4px}
+.zap .msgs{padding:10px 10px 4px;display:flex;flex-direction:column;justify-content:flex-end;gap:3px}
 
-/* preço */
-.plano{border:1px solid var(--linha);border-radius:var(--raio);padding:34px;
- background:rgba(245,241,232,.045);max-width:520px;margin-top:36px}
-.plano .valor{font-family:"Plex Mono",monospace;font-size:3.1rem;font-weight:600;
- letter-spacing:-.04em;line-height:1}
-.plano .valor small{font-size:1rem;font-weight:400;color:rgba(245,241,232,.6);
- letter-spacing:0}
-.plano ul{list-style:none;margin:24px 0 28px;display:grid;gap:11px}
-.plano li{padding-left:26px;position:relative;font-size:.98rem}
-.plano li::before{content:"";position:absolute;left:0;top:.46em;width:11px;height:2px;
- background:var(--violeta)}
-.porque{margin-top:26px;font-size:.95rem;color:rgba(245,241,232,.72);max-width:52ch}
+.js .capitulo-cenas{padding:0;min-height:100dvh;display:grid;place-items:center;overflow:hidden}
+.js .manifesto{display:block;position:absolute;inset:0;z-index:2;display:grid;place-items:center;text-align:center;padding:0 20px;pointer-events:none}
+.js .manifesto h2{font-size:clamp(2.6rem,9vw,8rem);max-width:10ch;color:var(--texto)}
+.js .manifesto p{color:var(--texto-suave);margin-top:18px;font-size:clamp(1.05rem,1.8vw,1.3rem);max-width:34ch;margin-inline:auto}
+.js .palco{position:relative;z-index:1;width:100vw;height:100dvh;margin:0;padding:calc(var(--topo) + 12px) max(20px,calc((100vw - var(--larg)) / 2)) 24px;
+ display:grid;grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto;gap:14px;transform-origin:50% 50%;will-change:transform,opacity}
+.js .palco h2{font-size:clamp(1.5rem,3vw,2.4rem)}
+.js .palco .intro{display:none}
+.js .palco-texto{grid-row:2;display:grid;gap:10px}
+.js .legendas{display:grid;margin:0}
+.js .legenda{grid-area:1/1;margin:0;font-size:1.05rem;line-height:1.35;will-change:transform,opacity}
+.js .progresso{display:flex;gap:14px;font-family:"Plex Mono",monospace;font-size:.85rem;color:#6B7280}
+.js .progresso span.ativa{color:var(--violeta);font-weight:600}
+.js .zap{grid-row:1;aspect-ratio:9/19;height:100%;width:auto;max-width:100%;justify-self:center;margin:0}
+.js .zap .conversas{display:grid;grid-template-rows:minmax(0,1fr);padding:0;overflow:hidden}
+.js .zap .msgs{grid-area:1/1;will-change:transform,opacity;overflow:hidden}
 
-/* faq */
-details{border-bottom:1px solid var(--linha-clara);padding:20px 0}
-summary{cursor:pointer;font-weight:600;font-size:1.04rem;list-style:none;
+/* o celular com o WhatsApp (tema escuro): e o produto de verdade, entao e fiel */
+.zap{aspect-ratio:auto;background:#0A0F18;border-radius:38px;padding:8px;box-shadow:0 30px 60px -28px rgba(0,0,0,.75);
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:#E9EDEF;font-size:13.5px;line-height:1.3;text-align:left}
+.zap .tela{background:#0B141A;border-radius:30px;height:100%;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;overflow:hidden;min-height:100%;
+ background-image:radial-gradient(rgba(255,255,255,.045) 1px,transparent 1.5px),radial-gradient(rgba(255,255,255,.03) 1px,transparent 1.5px);
+ background-size:26px 26px,26px 26px;background-position:0 0,13px 13px}
+.zap .status{display:flex;justify-content:space-between;align-items:center;padding:12px 24px 4px;font-size:12px;font-weight:600;background:#1F2C34}
+.zap .status i{display:inline-block;width:22px;height:11px;border:1.5px solid #E9EDEF;border-radius:3px;position:relative;opacity:.9}
+.zap .status i::after{content:"";position:absolute;inset:2px;background:#E9EDEF;border-radius:1px;width:60%}
+.zap .topo{display:flex;align-items:center;gap:10px;padding:6px 14px 10px;background:#1F2C34;border-bottom:1px solid rgba(255,255,255,.06)}
+.zap .volta{color:#53BDEB;font-size:22px;line-height:1;margin-right:2px}
+.zap .avatar{width:32px;height:32px;border-radius:50%;background:#16233B;display:grid;place-items:center;flex:none}
+.zap .avatar svg{width:20px;height:20px}
+.zap .nome{font-weight:600;font-size:15px;line-height:1.1}
+.zap .nome small{display:block;font-weight:400;font-size:11px;color:#8696A0;margin-top:2px}
+.zap .data{align-self:center;background:#182229;color:#8696A0;font-size:11px;padding:4px 10px;border-radius:7px;margin-bottom:8px}
+.zap .b{max-width:84%;padding:7px 9px 6px 10px;border-radius:9px;position:relative;box-shadow:0 1px .5px rgba(0,0,0,.3)}
+.zap .b.ele{background:#202C33;align-self:flex-start;border-top-left-radius:3px}
+.zap .b.eu{background:#005C4B;align-self:flex-end;border-top-right-radius:3px}
+.zap .b + .b.ele,.zap .b + .b.eu{margin-top:1px}
+.zap .b time{float:right;margin:7px -3px -4px 8px;font-size:10.5px;color:#8696A0;line-height:1}
+.zap .b.eu time{color:rgba(233,237,239,.62)}
+.zap .b time i{font-style:normal;color:#53BDEB;margin-left:3px;letter-spacing:-.18em}
+.zap .b.foto{padding:4px 4px 6px}
+.zap .b.foto img{border-radius:6px;width:100%;aspect-ratio:1;object-fit:cover;margin-bottom:4px;display:block}
+.zap .b.foto span{display:block;padding:2px 6px 0}
+.zap .entrada{display:flex;align-items:center;gap:8px;padding:8px 10px 16px;background:#1F2C34}
+.zap .mais{font-size:24px;color:#8696A0;width:26px;text-align:center;line-height:1}
+.zap .campo{flex:1;background:#2A3942;border-radius:18px;padding:8px 12px;color:#8696A0;font-size:13px}
+.zap .mic{width:34px;height:34px;border-radius:50%;background:#00A884;position:relative;flex:none}
+.zap .mic::after{content:"";position:absolute;left:50%;top:50%;width:8px;height:14px;border-radius:4px;background:#0B141A;transform:translate(-50%,-58%)}
+
+/* capitulo: as folhas reais, em profundidade */
+.folhas .env{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+.pilha{position:relative;width:min(100%,400px);aspect-ratio:840/1192;margin-inline:auto}
+.pilha img{position:absolute;inset:0;width:100%;box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+.pilha .tras{transform:rotate(-6deg) translate(-12%,3%)}
+.pilha .frente{transform:rotate(3deg) translate(6%,-2%)}
+
+/* capitulo: quatro passos, cada um com a sua foto. Estatico: lista com foto ao lado.
+   Imersivo: a secao trava, a foto troca a cada passo e o passo ativo acende. */
+.passos ol{list-style:none;margin-top:12px;display:grid;gap:40px}
+.passos li{display:grid;grid-template-columns:1fr;gap:18px;align-items:center}
+.passos .foto{aspect-ratio:4/5;overflow:hidden;--chanfro:26px}
+.passos .foto img{width:100%;height:100%;object-fit:cover;filter:saturate(.85)}
+.passos .numero{font-family:"Plex Mono",monospace;font-weight:600;font-size:clamp(2rem,5vw,3.4rem);color:var(--violeta-clara);line-height:1;display:block;margin-bottom:10px}
+.passos li p{color:var(--texto-suave);font-size:1.05rem;max-width:40ch;margin-top:8px}
+.js .passos{padding:0;min-height:100dvh;display:grid;align-items:center;overflow:hidden}
+.js .passos .env{display:grid;grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr) auto;gap:22px;height:100dvh;padding:calc(var(--topo) + 12px) 0 28px;align-items:center}
+.js .passos h2{font-size:clamp(1.7rem,3.2vw,2.6rem)}
+.js .passos ol{margin:0;display:grid;grid-template-columns:1fr;gap:0;height:100%}
+.js .passos li{display:contents}
+.js .passos .foto{grid-column:1;grid-row:1;height:100%;width:100%;will-change:transform,opacity}
+.js .passos .texto{grid-column:1;grid-row:2;will-change:transform,opacity}
+.js .passos li p{max-width:38ch}
+.js .passos .contador{display:flex;gap:14px;font-family:"Plex Mono",monospace;font-size:.85rem;color:var(--texto-suave)}
+.js .passos .contador span.ativa{color:var(--violeta-clara);font-weight:600}
+.contador{display:none}
+.js .contador{display:flex}
+
+/* capitulo: o preco em escala de cartaz */
+.capitulo-preco .env{display:grid;grid-template-columns:1fr;gap:34px;align-items:center}
+.preco-gigante{font-family:"Plex Mono",monospace;font-weight:600;letter-spacing:-.05em;line-height:.9;
+ font-size:clamp(3.6rem,17vw,9.6rem);white-space:nowrap}
+.preco-gigante small{display:block;font-family:Archivo,sans-serif;font-weight:500;letter-spacing:0;
+ font-size:clamp(1.1rem,2.2vw,1.6rem);color:var(--texto-suave);margin-top:18px;white-space:normal}
+.oferta{background:var(--violeta);color:#fff;padding:34px 30px 32px;will-change:transform,opacity}
+.oferta ul{list-style:none;display:grid;gap:11px;margin:0 0 26px}
+.oferta li{padding-left:22px;position:relative;font-size:1.02rem}
+.oferta li::before{content:"";position:absolute;left:0;top:.66em;width:10px;height:2px;background:var(--papel)}
+.oferta .porque{margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.22)}
+.oferta .porque b{display:block;font-size:1.15rem;margin-bottom:6px}
+.oferta .porque p{color:rgba(255,255,255,.8);font-size:1rem;max-width:44ch}
+.js .capitulo-preco{padding:calc(var(--topo) + 24px) 0 64px;overflow:hidden}
+
+/* perguntas */
+.lista{margin-top:26px;border-top:1px solid var(--linha)}
+details{border-bottom:1px solid var(--linha);padding:22px 0}
+summary{cursor:pointer;font-weight:600;font-size:clamp(1.08rem,1.6vw,1.3rem);list-style:none;
  display:flex;justify-content:space-between;gap:16px;align-items:center}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-family:"Plex Mono",monospace;color:var(--violeta);
- font-size:1.3rem;line-height:1}
-details[open] summary::after{content:"–"}
-details p{margin-top:12px;color:var(--cinza);max-width:66ch;font-size:.98rem}
+summary::after{content:"+";font-family:"Plex Mono",monospace;color:var(--violeta-clara);font-size:1.5rem;line-height:1;font-weight:600}
+details[open] summary::after{content:"-"}
+details p{margin-top:12px;color:var(--texto-suave);max-width:64ch;font-size:1.02rem}
 
-/* fechamento + rodapé */
-.fecho{text-align:center}
-.fecho .env{display:flex;flex-direction:column;align-items:center;gap:8px}
-footer{background:var(--tinta);color:rgba(245,241,232,.62);padding:46px 0 40px;font-size:.86rem}
-footer img{height:26px;margin-bottom:22px}
-footer .aviso{border-top:1px solid var(--linha);margin-top:22px;padding-top:20px;
- max-width:74ch;line-height:1.6}
-footer b{color:rgba(245,241,232,.86);font-weight:600}
+/* fecho: a academia vazia, escura, e o bloco de papel por cima */
+.fecho{padding:120px 0;isolation:isolate}
+.fecho-foto{position:absolute;inset:0;z-index:-2}
+.fecho-foto img{width:100%;height:100%;object-fit:cover;object-position:50% 60%;filter:saturate(.6)}
+.fecho::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--fundo) 0%,rgba(15,23,41,.55) 40%,rgba(15,23,41,.7) 100%)}
+.fecho .bloco{background:var(--papel);color:var(--tinta);padding:56px 28px 52px}
+.fecho h2{color:var(--tinta)}
+.fecho p{color:#4B5563;margin-top:16px;max-width:42ch;font-size:1.1rem}
+.fecho .cta{margin-top:28px}
+
+/* rodape */
+footer{border-top:1px solid var(--linha);padding:40px 0 48px;font-size:.9rem;color:var(--texto-suave)}
+footer img{height:24px;width:auto;margin-bottom:18px}
+footer p{max-width:74ch;margin-top:6px}
+footer .aviso{margin-top:18px;line-height:1.55}
+footer b{color:var(--texto);font-weight:600}
 
 @media(min-width:900px){
- .hero .env{grid-template-columns:1.05fr .95fr;align-items:center;gap:56px}
- section{padding:96px 0}
+ section{padding:128px 0}
+ .hero{padding:calc(var(--topo) + 40px) 0 88px}
+ .hero .env{grid-template-columns:1.2fr .8fr;gap:40px}
+ .simbolo{width:min(26vw,360px)}
+ .gente{padding:88px 0 0}
+ .capitulo-cenas{padding:128px 0 0}
+ .js .palco{grid-template-columns:.85fr 1.15fr;grid-template-rows:minmax(0,1fr);gap:56px;align-items:center}
+ .js .palco-texto{grid-row:1;grid-column:1;align-self:center;gap:22px}
+ .js .legenda{font-size:clamp(1.3rem,2vw,1.7rem);line-height:1.25;max-width:20ch}
+ .js .zap{grid-row:1;grid-column:2;justify-self:end}
+ .js .progresso{position:absolute;left:max(20px,calc((100vw - var(--larg)) / 2));bottom:28px}
+ .folhas .env{grid-template-columns:1fr 1fr;gap:64px}
+ .pilha{width:min(100%,440px);margin-inline:auto 0}
+ .passos li{grid-template-columns:1fr 1fr;gap:56px}
+ .passos li:nth-child(even) .foto{order:2}
+ .js .passos .env{grid-template-columns:.9fr 1.1fr;grid-template-rows:auto minmax(0,1fr);gap:24px 64px}
+ .js .passos h2{grid-column:1 / -1}
+ .js .passos ol{grid-column:1 / -1;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+ .js .passos .foto{grid-column:2;grid-row:1;height:min(70dvh,640px);justify-self:end;width:min(100%,520px)}
+ .js .passos .texto{grid-column:1;grid-row:1;align-self:center}
+ .js .passos .contador{position:absolute;left:max(20px,calc((100vw - var(--larg)) / 2));bottom:28px}
+ .capitulo-preco .env{grid-template-columns:1.4fr .6fr;gap:48px}
+ .js .capitulo-preco{min-height:100dvh;display:grid;place-items:center;padding:0}
+ .fecho{padding:160px 0}
+ .fecho .bloco{padding:88px 72px 80px;max-width:820px}
 }
+@media(prefers-reduced-motion:reduce){.cta{transition:none}.faixa .trilho{animation:none}}
 </style>
 </head>
 <body>
 
 <header>
   <div class="env">
-    <a href="#topo" aria-label="LianFit"><img src="assets/lockup-papel.svg" alt="LianFit"></a>
-    <a class="cta" href="https://wa.me/5547996182395?text=Ol%C3%A1%2C%20quero%20come%C3%A7ar%20no%20LianFit" data-wa>Começar · R$ 19,90</a>
+    <a href="#topo" aria-label="LianFit"><img class="lockup-papel" src="assets/lockup-papel.svg" alt="LianFit"><img class="lockup-noite" src="assets/lockup-noite.svg" alt="LianFit"></a>
+    <a class="cta" href="https://wa.me/5547996182395?text=Ol%C3%A1%2C%20quero%20come%C3%A7ar%20no%20LianFit" data-wa>Começar no WhatsApp</a>
   </div>
 </header>
 
 <main id="topo">
 
 <section class="hero">
+  <div class="hero-foto" aria-hidden="true"><img src="assets/fotos/hero-academia.jpg" width="1600" height="2133" alt="" loading="eager" fetchpriority="high"></div>
   <div class="env">
     <div>
-      <p class="olho">Treino e dieta no WhatsApp</p>
-      <h1>Encaixa na <em>tua</em> vida.</h1>
-      <p class="sub">Teu treino e tua dieta montados sob medida, no WhatsApp, 24 horas por dia — e reescritos na hora quando a vida muda de ideia.</p>
-
-      <div class="preco-linha">
-        <b>R$ 19,90</b><span>por mês, sem fidelidade</span>
-      </div>
-
-      <a class="cta" href="https://wa.me/5547996182395?text=Ol%C3%A1%2C%20quero%20come%C3%A7ar%20no%20LianFit" data-wa>Começar agora no WhatsApp</a>
-      <p class="cta-nota">Não precisa baixar app nem criar login. A conversa começa no WhatsApp.</p>
-
-      <div class="selos">
-        <span class="selo">24h por dia</span>
-        <span class="selo">Sem app</span>
-        <span class="selo">Cancela quando quiser</span>
-      </div>
+      <h1><span class="palavra">Encaixa</span> <span class="palavra">na</span> <span class="palavra">tua</span> <span class="palavra">vida.</span></h1>
+      <p class="sub">Treino e dieta sob medida no teu WhatsApp, 24 horas por dia, por R$ 19,90 ao mês. Sem app, sem fidelidade.</p>
+      <a class="cta" href="https://wa.me/5547996182395?text=Ol%C3%A1%2C%20quero%20come%C3%A7ar%20no%20LianFit" data-wa>Começar no WhatsApp</a>
     </div>
-
-    <div class="fone" aria-label="Exemplo de conversa">
-      <div class="fone-topo">
-        <img src="assets/lockup-papel.svg" alt="" style="height:26px;width:auto;border-radius:0;padding:0">
-        <div><b>LianFit</b><small>online agora</small></div>
-      </div>
-      <p class="bolha dele">Bom dia! Hoje é costas e bíceps. Antes de sair, me diz: dormiu bem?</p>
-      <p class="bolha meu">dormi mal e tô no aeroporto. só tem padaria aqui</p>
-      <p class="bolha dele">Sem drama. Reduzi uma série de cada exercício e troquei o almoço: pão integral + ovos + fruta bate quase os mesmos macros. Manda foto do que escolher que eu confiro.</p>
-      <p class="anexo">📷 foto do prato</p>
-      <p class="bolha dele">Boa. Isso aí dá ~640 kcal e 34 g de proteína. Tá dentro — na janta a gente completa o resto.</p>
+    <div class="simbolo" aria-hidden="true">
+      <!-- L EDGE: o L em camadas que se encaixam sem se tocar. -->
+      <svg viewBox="0 0 100 100">
+        <path class="camada c1" fill="#F5F1E8" d="M57.6 8.8 L29.6 56.4 L74.8 53.6 L60.4 65.2 L8 71.2 L34 20 Z"/>
+        <path class="camada c2" fill="#F5F1E8" d="M90.8 66.8 L8.8 78 L42 85.2 Z"/>
+        <path class="camada c3" fill="#6B4FB6" d="M87.6 74.4 L60.4 91.2 L44.4 87.6 L61.2 81.2 Z"/>
+      </svg>
     </div>
   </div>
 </section>
 
-<section>
+<section class="gente">
   <div class="env">
-    <p class="olho">O que ele faz</p>
-    <h2>O plano cede. O rumo não.</h2>
-    <p class="sub">Aplicativo entrega um plano e some. Personal não está lá no restaurante, nem às onze da noite. O LianFit está — e reescreve o plano em vez de te cobrar por ter saído dele.</p>
-
-    <div class="grade">
-      <article class="card"><span class="num">01</span><h3>Manda foto do prato</h3>
-        <p>Restaurante, viagem, casa da sogra. Ele lê o prato, estima os macros e diz o que ajustar no resto do dia.</p></article>
-      <article class="card"><span class="num">02</span><h3>Acabou o frango?</h3>
-        <p>Ele troca o alimento por outro com macros equivalentes. Não gosta de algo, não achou no mercado, tanto faz.</p></article>
-      <article class="card"><span class="num">03</span><h3>Academia sem o aparelho</h3>
-        <p>Ou hotel, ou dor no ombro. Ele troca o exercício e o treino continua no mesmo dia.</p></article>
-      <article class="card"><span class="num">04</span><h3>Ele te chama primeiro</h3>
-        <p>Todo dia de manhã, com o treino do dia. E volta a chamar se tu sumir — sem sermão.</p></article>
-      <article class="card"><span class="num">05</span><h3>Registra o que aconteceu</h3>
-        <p>Treino feito, peso, medidas, fotos de progresso. É isso que alimenta o plano seguinte.</p></article>
-      <article class="card"><span class="num">06</span><h3>Plano novo a cada 28 dias</h3>
-        <p>Reescrito com o que aconteceu no ciclo. Não é o mesmo PDF renovado.</p></article>
+    <h2>Gente que treina de verdade, com uma vida de verdade.</h2>
+    <p class="sub">Trabalho, faculdade, restaurante às onze da noite. O plano tem que caber nisso, e não o contrário.</p>
+  </div>
+  <div class="faixa" aria-hidden="true">
+    <div class="trilho">
+      <img class="encaixe" src="assets/fotos/faixa-01.jpg" alt="" loading="lazy"><img class="encaixe" src="assets/fotos/faixa-02.jpg" alt="" loading="lazy"><img class="encaixe" src="assets/fotos/faixa-03.jpg" alt="" loading="lazy"><img class="encaixe" src="assets/fotos/faixa-04.jpg" alt="" loading="lazy">
+      <img class="encaixe" src="assets/fotos/faixa-01.jpg" alt="" loading="lazy"><img class="encaixe" src="assets/fotos/faixa-02.jpg" alt="" loading="lazy"><img class="encaixe" src="assets/fotos/faixa-03.jpg" alt="" loading="lazy"><img class="encaixe" src="assets/fotos/faixa-04.jpg" alt="" loading="lazy">
+    </div>
+    <div class="trilho volta">
+      <img class="encaixe" src="assets/fotos/faixa-05.jpg" alt="" loading="lazy"><img class="encaixe" src="assets/fotos/faixa-06.jpg" alt="" loading="lazy"><img class="encaixe" src="assets/fotos/faixa-07.jpg" alt="" loading="lazy"><img class="encaixe" src="assets/fotos/faixa-08.jpg" alt="" loading="lazy">
+      <img class="encaixe" src="assets/fotos/faixa-05.jpg" alt="" loading="lazy"><img class="encaixe" src="assets/fotos/faixa-06.jpg" alt="" loading="lazy"><img class="encaixe" src="assets/fotos/faixa-07.jpg" alt="" loading="lazy"><img class="encaixe" src="assets/fotos/faixa-08.jpg" alt="" loading="lazy">
     </div>
   </div>
 </section>
 
-<section class="escuro">
+<section class="capitulo-cenas">
+  <div class="manifesto" aria-hidden="true">
+    <div>
+      <h2>O plano cede. O rumo não.</h2>
+      <p>Aplicativo entrega um plano e some. O LianFit fica, e reescreve o plano quando a vida muda de ideia.</p>
+    </div>
+  </div>
+  <div class="palco encaixe">
+    <div class="palco-texto">
+      <h2>O plano cede. O rumo não.</h2>
+      <p class="intro">Aplicativo entrega um plano e some. O LianFit fica, e reescreve o plano quando a vida muda de ideia.</p>
+      <div class="legendas">
+        <p class="legenda"><span class="num">1 de 6</span>Manda a foto do prato. Ele estima calorias e proteína e ajusta o resto do dia.</p>
+        <p class="legenda"><span class="num">2 de 6</span>Acabou o frango? Ele troca por outro alimento com os mesmos macros.</p>
+        <p class="legenda"><span class="num">3 de 6</span>Aparelho ocupado, ombro dolorido, hotel sem academia. Ele troca o exercício e o treino segue.</p>
+        <p class="legenda"><span class="num">4 de 6</span>Ele te chama primeiro, todo dia de manhã, com o treino do dia.</p>
+        <p class="legenda"><span class="num">5 de 6</span>Dia ruim também tem plano. Voltar pequeno é melhor que não voltar.</p>
+        <p class="legenda"><span class="num">6 de 6</span>A cada 28 dias, plano novo com o que tu registrou. Não é o mesmo PDF renovado.</p>
+      </div>
+      <div class="progresso" aria-hidden="true"><span class="ativa">01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span></div>
+    </div>
+    <div class="zap" aria-hidden="true"><div class="tela">
+      <div class="status"><span class="hora">20:21</span><i></i></div>
+      <div class="topo"><span class="volta">&#8249;</span><span class="avatar"><svg viewBox="0 0 100 100" aria-hidden="true"><path fill="#F5F1E8" d="M57.6 8.8 L29.6 56.4 L74.8 53.6 L60.4 65.2 L8 71.2 L34 20 Z"/><path fill="#F5F1E8" d="M90.8 66.8 L8.8 78 L42 85.2 Z"/><path fill="#6B4FB6" d="M87.6 74.4 L60.4 91.2 L44.4 87.6 L61.2 81.2 Z"/></svg></span><span class="nome">LianFit<small>online</small></span></div>
+      <div class="conversas">
+        <div class="msgs" data-hora="20:21"><span class="data">Foto do prato</span><p class="b eu foto"><img src="assets/fotos/prato.jpg" alt=""><span>tô no rodízio, ferrou?<time>20:21<i>&#10003;&#10003;</i></time></span></p><p class="b ele">deixa eu ver… uns 780 kcal e 52 g de proteína nesse prato<time>20:21</time></p><p class="b ele">então hoje no janta tu já sabe: algo leve<time>20:22</time></p></div>
+        <div class="msgs" data-hora="19:40"><span class="data">Troca de alimento</span><p class="b eu">acabou o frango aqui em casa<time>19:40<i>&#10003;&#10003;</i></time></p><p class="b ele">190g de patinho moído ou 200g de tilápia no lugar do frango. Bate a mesma proteína<time>19:40</time></p></div>
+        <div class="msgs" data-hora="18:05"><span class="data">Troca de exercício</span><p class="b eu">tem fila nesse aparelho, sempre<time>18:05<i>&#10003;&#10003;</i></time></p><p class="b ele">então faz supino com halteres, 4×8-12, mesma pegada<time>18:05</time></p><p class="b ele">mesmo estímulo, sem esperar<time>18:06</time></p></div>
+        <div class="msgs" data-hora="07:00"><span class="data">Bom dia</span><p class="b ele">bom dia. hoje é dia de perna no teu plano<time>07:00</time></p><p class="b ele">agachamento 4×8-12. E essa é a semana de subir a carga<time>07:00</time></p><p class="b eu">bora<time>07:12<i>&#10003;&#10003;</i></time></p></div>
+        <div class="msgs" data-hora="21:15"><span class="data">Dia ruim</span><p class="b eu">faz 3 dias que não vou, tô desanimado<time>21:15<i>&#10003;&#10003;</i></time></p><p class="b ele">sem sermão. hoje faz o A do teu jeito, tira 2 séries de cada<time>21:15</time></p><p class="b ele">voltar pequeno é melhor que não voltar<time>21:16</time></p></div>
+        <div class="msgs" data-hora="08:30"><span class="data">Fim do ciclo</span><p class="b ele">fechou o ciclo. me manda teu peso de hoje que eu refaço teu plano<time>08:30</time></p><p class="b eu">82,4<time>08:41<i>&#10003;&#10003;</i></time></p><p class="b ele">anotado. teu plano do mês que vem sai com esse número<time>08:41</time></p></div>
+      </div>
+      <div class="entrada"><span class="mais">+</span><span class="campo">Mensagem</span><span class="mic"></span></div>
+    </div></div>
+  </div>
+</section>
+
+<section class="folhas">
   <div class="env">
-    <p class="olho">Como funciona</p>
+    <div>
+      <h2>Isto é o que chega no teu WhatsApp.</h2>
+      <p class="sub">Duas folhas: o treino de um lado, a comida do dia do outro. Em gramas, com as trocas já calculadas.</p>
+    </div>
+    <div class="pilha" aria-label="As duas folhas do plano: treino e comida do dia">
+      <img class="tras" src="assets/plano-dieta.png" width="840" height="1192" alt="" loading="lazy">
+      <img class="frente" src="assets/plano-treino.png" width="840" height="1192" alt="Folha de treino do LianFit, com um card por dia de treino" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="passos">
+  <div class="env">
     <h2>Quatro passos, tudo no WhatsApp.</h2>
-    <div class="grade quatro">
-      <article class="card"><span class="num">Passo 1</span><h3>A conversa</h3>
-        <p>Ele pergunta teu objetivo, tua rotina, o que tu come, o que dói e o que tu odeia comer.</p></article>
-      <article class="card"><span class="num">Passo 2</span><h3>O plano</h3>
-        <p>Treino e dieta montados pra ti, entregues em PDF na conversa.</p></article>
-      <article class="card"><span class="num">Passo 3</span><h3>O dia a dia</h3>
-        <p>É aqui que a coisa acontece: ajuste na hora, todo dia, quantas vezes precisar.</p></article>
-      <article class="card"><span class="num">Passo 4</span><h3>O ciclo</h3>
-        <p>A cada 28 dias, plano novo com base no que tu registrou — não no que tu prometeu.</p></article>
-    </div>
+    <ol>
+      <li><div class="foto encaixe"><img src="assets/fotos/passo-1-conversa.jpg" width="1200" height="1800" alt="Homem olhando o celular na academia" loading="lazy"></div>
+        <div class="texto"><span class="numero">1</span><h3><span class="palavra">A conversa</span></h3><p>Ele pergunta teu objetivo, tua rotina, o que tu come, o que dói e o que tu odeia comer.</p></div></li>
+      <li><div class="foto encaixe"><img src="assets/fotos/passo-2-plano.jpg" width="1200" height="1800" alt="Pessoa sentada no rack de agachamento, descansando" loading="lazy"></div>
+        <div class="texto"><span class="numero">2</span><h3><span class="palavra">O plano</span></h3><p>Treino e dieta montados pra ti, entregues em PDF na conversa.</p></div></li>
+      <li><div class="foto encaixe"><img src="assets/fotos/passo-3-diaadia.jpg" width="1200" height="1793" alt="Homem de costas treinando numa academia azul" loading="lazy"></div>
+        <div class="texto"><span class="numero">3</span><h3><span class="palavra">O dia a dia</span></h3><p>Ajuste na hora, todo dia, quantas vezes precisar. É aqui que a coisa acontece.</p></div></li>
+      <li><div class="foto encaixe"><img src="assets/fotos/passo-4-ciclo.jpg" width="1200" height="1500" alt="Homem fazendo agachamento com barra" loading="lazy"></div>
+        <div class="texto"><span class="numero">4</span><h3><span class="palavra">O ciclo</span></h3><p>A cada 28 dias, plano novo com base no que tu registrou, não no que tu prometeu.</p></div></li>
+    </ol>
+    <div class="contador" aria-hidden="true"><span class="ativa">01</span><span>02</span><span>03</span><span>04</span></div>
   </div>
 </section>
 
-<section class="escuro" style="padding-top:0">
+<section class="capitulo-preco" id="preco">
   <div class="env">
-    <p class="olho">Preço</p>
-    <h2>R$ 19,90 por mês. Só isso.</h2>
-    <div class="plano">
-      <p class="valor">R$ 19,90 <small>/mês</small></p>
+    <p class="preco-gigante">R$ 19,90<small>por mês. Só isso. Tecnologia escala, gente não.</small></p>
+    <div class="oferta encaixe">
       <ul>
         <li>Treino e dieta montados pra ti</li>
         <li>Ajuste ilimitado, 24 horas por dia</li>
         <li>Foto do prato com leitura de macros</li>
         <li>Plano novo a cada 28 dias</li>
-        <li>Pagamento por Pix ou cartão, sem fidelidade</li>
+        <li>Pix ou cartão, sem fidelidade</li>
         <li>Cancelamento pelo próprio WhatsApp</li>
       </ul>
-      <a class="cta" href="https://wa.me/5547996182395?text=Ol%C3%A1%2C%20quero%20come%C3%A7ar%20no%20LianFit" data-wa>Começar agora</a>
+      <a class="cta" href="https://wa.me/5547996182395?text=Ol%C3%A1%2C%20quero%20come%C3%A7ar%20no%20LianFit" data-wa>Começar no WhatsApp</a>
+      <div class="porque">
+        <b>Por que tão barato?</b>
+        <p>O mesmo acompanhamento que custa centenas por mês com nutricionista e personal cabe em R$ 19,90 quando quem atende às três da manhã é software.</p>
+      </div>
     </div>
-    <p class="porque"><b>Por que tão barato?</b> Porque tecnologia escala e gente não. O mesmo acompanhamento que custa centenas por mês com nutricionista e personal cabe em R$ 19,90 quando quem atende às três da manhã é software.</p>
   </div>
 </section>
 
-<section>
+<section class="perguntas">
   <div class="env">
-    <p class="olho">Perguntas</p>
     <h2>O que costumam perguntar antes.</h2>
-    <div style="margin-top:30px">
+    <div class="lista">
       <details><summary>Isso substitui nutricionista ou personal?</summary>
         <p>Não. O LianFit é acompanhamento de treino e alimentação assistido por inteligência artificial. Não faz diagnóstico, não prescreve tratamento e não substitui consulta com profissional de saúde.</p></details>
       <details><summary>É uma IA mesmo?</summary>
-        <p>É, e a gente não esconde. Quem responde no WhatsApp é uma IA — é justamente por isso que ela está acordada às onze da noite e responde na hora.</p></details>
+        <p>É, e a gente não esconde. Quem responde no WhatsApp é uma IA. É justamente por isso que ela está acordada às onze da noite e responde na hora.</p></details>
       <details><summary>Preciso de academia?</summary>
         <p>Não. O treino é montado com o que tu tem: academia, casa, hotel, parque. Se mudar de lugar, ele remonta.</p></details>
       <details><summary>E se eu sair da dieta?</summary>
@@ -306,11 +463,14 @@ footer b{color:rgba(245,241,232,.86);font-weight:600}
   </div>
 </section>
 
-<section class="escuro fecho">
+<section class="fecho">
+  <div class="fecho-foto" aria-hidden="true"><img src="assets/fotos/fecho-academia.jpg" width="1200" height="1800" alt="" loading="lazy"></div>
   <div class="env">
-    <h2>A vida real cabe aqui.</h2>
-    <p class="sub" style="text-align:center;margin-inline:auto">Começa hoje por R$ 19,90. Se não encaixar, tu cancela na mesma conversa.</p>
-    <a class="cta" style="margin-top:26px" href="https://wa.me/5547996182395?text=Ol%C3%A1%2C%20quero%20come%C3%A7ar%20no%20LianFit" data-wa>Começar no WhatsApp</a>
+    <div class="bloco encaixe">
+      <h2>A vida real cabe aqui.</h2>
+      <p>Começa hoje por R$ 19,90. Se não encaixar, tu cancela na mesma conversa.</p>
+      <a class="cta violeta" href="https://wa.me/5547996182395?text=Ol%C3%A1%2C%20quero%20come%C3%A7ar%20no%20LianFit" data-wa>Começar no WhatsApp</a>
+    </div>
   </div>
 </section>
 
@@ -319,9 +479,9 @@ footer b{color:rgba(245,241,232,.86);font-weight:600}
 <footer>
   <div class="env">
     <img src="assets/lockup-papel.svg" alt="LianFit">
-    <p>LianFit é um serviço da <b>Orion Tecnologia</b> — CNPJ 64.512.751/0001-70.</p>
+    <p>LianFit é um serviço da <b>Orion Tecnologia</b>, CNPJ 64.512.751/0001-70.</p>
     <p>© 2026 Orion Tecnologia. Todos os direitos reservados.</p>
-    <p class="aviso">O LianFit oferece acompanhamento de treino e alimentação assistido por inteligência artificial. <b>Não substitui consulta, diagnóstico ou tratamento</b> médico, nutricional ou de educação física, e não promete resultado de emagrecimento ou ganho de massa. Se tu tem alguma condição de saúde, está gestante ou usa medicação contínua, fala com um profissional antes de começar. Ao iniciar a conversa no WhatsApp, tu concorda que os dados informados sejam usados para montar e ajustar o teu plano.</p>
+    <p class="aviso">O LianFit oferece acompanhamento de treino e alimentação assistido por inteligência artificial. <b>Não substitui consulta, diagnóstico ou tratamento</b> médico, nutricional ou de educação física, e não promete resultado de emagrecimento ou ganho de massa. Se tu tem alguma condição de saúde, está gestante ou usa medicação contínua, fala com um profissional antes de começar. Ao iniciar a conversa no WhatsApp, tu concorda que os dados informados sejam usados para montar e ajustar o teu plano. Fotos de banco de imagens: as pessoas retratadas não são clientes.</p>
   </div>
 </footer>
 
@@ -335,6 +495,145 @@ document.querySelectorAll('[data-wa]').forEach(function(a){
     if (window.fbq) fbq('track', 'Contact');
   });
 });
+</script>
+
+<!-- Experiencia de rolagem: Lenis (rolagem suave) + GSAP + ScrollTrigger. So carrega com
+     a classe `js` (sem "reduzir movimento"). Se qualquer script falhar, a pagina volta
+     ao layout estatico. -->
+<script>
+(function(){
+  if (!document.documentElement.classList.contains('js')) return;
+  function carregar(src){ return new Promise(function(ok, falha){ var s = document.createElement('script'); s.src = src; s.onload = ok; s.onerror = falha; document.head.appendChild(s); }); }
+  Promise.all([
+    carregar('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js').then(function(){ return carregar('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js'); }),
+    carregar('https://cdn.jsdelivr.net/npm/lenis@1.3.8/dist/lenis.min.js')
+  ]).then(iniciar).catch(function(){ document.documentElement.classList.remove('js'); });
+
+  function iniciar(){
+    gsap.registerPlugin(ScrollTrigger);
+    var desktop = window.matchMedia('(min-width: 900px)').matches;
+    var header = document.querySelector('header');
+
+    var lenis = new Lenis({ lerp: .09, smoothWheel: true });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(function(t){ lenis.raf(t * 1000); });
+    gsap.ticker.lagSmoothing(0);
+
+    // 1. Chegada: a foto assenta, as tres pecas do L vem de lugares diferentes e encaixam,
+    //    o titulo abre a largura (eixo wdth da Archivo), palavra por palavra.
+    gsap.timeline({ defaults: { ease: 'power3.out' } })
+      .from('.hero-foto img', { scale: 1.12, opacity: 0, duration: 1.6, ease: 'power2.out' }, 0)
+      .from('.simbolo .c1', { x: -34, y: -26, rotate: -10, opacity: 0, duration: 1.1 }, .2)
+      .from('.simbolo .c2', { x: 40, y: 30, rotate: 8, opacity: 0, duration: 1.1 }, .35)
+      .from('.simbolo .c3', { x: -30, y: 42, rotate: 14, opacity: 0, duration: 1.1 }, .5)
+      .fromTo('.hero h1 .palavra', { fontVariationSettings: '"wdth" 62', opacity: 0, y: 24 },
+              { fontVariationSettings: '"wdth" 100', opacity: 1, y: 0, duration: .9, stagger: .09 }, .35)
+      .from('.hero .sub, .hero .cta', { opacity: 0, y: 18, duration: .7, stagger: .1 }, .9)
+      .from('header', { opacity: 0, y: -10, duration: .6 }, 1.1);
+
+    //    Ao rolar, a foto fica pra tras (parallax) e as camadas do L se desfazem.
+    gsap.timeline({ scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } })
+      .to('.hero-foto img', { yPercent: 18, scale: 1.06, ease: 'none' }, 0)
+      .to('.simbolo .c1', { y: -60, ease: 'none' }, 0)
+      .to('.simbolo .c2', { y: -20, x: 18, ease: 'none' }, 0)
+      .to('.simbolo .c3', { y: 30, x: -14, ease: 'none' }, 0)
+      .to('.hero .env > div:first-child', { y: -60, opacity: .3, ease: 'none' }, 0);
+
+    // 2. O bloco de papel: comeca como uma peca pequena atras do manifesto, cresce ate
+    //    tomar a tela. Dentro dele o celular fica parado; a CONVERSA e que passa na tela,
+    //    uma por cena, com as bolhas chegando uma a uma.
+    var msgs = gsap.utils.toArray('.zap .msgs');
+    var legendas = gsap.utils.toArray('.legendas .legenda');
+    var pontos = gsap.utils.toArray('.progresso span');
+    var hora = document.querySelector('.zap .hora');
+    var n = msgs.length;
+    var total = n + 2.4;
+    gsap.set('.palco', { scale: .12, opacity: 0 });
+    gsap.set(['.palco-texto', '.zap'], { opacity: 0 });
+    gsap.set(msgs.slice(1), { y: 70, opacity: 0 });
+    gsap.set(legendas.slice(1), { y: 14, opacity: 0 });
+    msgs.forEach(function(m){ gsap.set(m.querySelectorAll('.b'), { y: 10, opacity: 0 }); });
+    var tlCenas = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.capitulo-cenas', start: 'top top', end: '+=' + Math.round(total * 70) + '%',
+        pin: true, scrub: .5, anticipatePin: 1,
+        onUpdate: function(st){
+          var t = st.progress * total - 1;
+          var i = Math.max(0, Math.min(n - 1, Math.floor(t - .35)));
+          pontos.forEach(function(p, k){ p.classList.toggle('ativa', k === i); });
+          header.classList.toggle('sobre-papel', t > -.35 && t < n + .25);
+        }
+      }
+    });
+    tlCenas
+      .to('.palco', { opacity: 1, duration: .15, ease: 'none' }, 0)
+      .to('.palco', { scale: 1, duration: 1, ease: 'power2.inOut' }, 0)
+      .to('.manifesto', { opacity: 0, scale: .96, duration: .4, ease: 'power2.in' }, .25)
+      .to(['.palco-texto', '.zap'], { opacity: 1, duration: .3, stagger: .05 }, .6)
+      .to(msgs[0].querySelectorAll('.b'), { y: 0, opacity: 1, duration: .22, stagger: .16, ease: 'power2.out' }, .95);
+    for (var i = 1; i < n; i++) {
+      var t0 = 1 + i;
+      tlCenas.to(legendas[i - 1], { y: -12, opacity: 0, duration: .25, ease: 'power2.in' }, t0)
+        .to(msgs[i - 1], { y: -60, opacity: 0, duration: .4, ease: 'power2.in' }, t0)
+        .to(msgs[i], { y: 0, opacity: 1, duration: .5, ease: 'power3.out' }, t0 + .2)
+        .set(hora, { textContent: msgs[i].getAttribute('data-hora') }, t0 + .25)
+        .to(legendas[i], { y: 0, opacity: 1, duration: .3, ease: 'power2.out' }, t0 + .3)
+        .to(msgs[i].querySelectorAll('.b'), { y: 0, opacity: 1, duration: .22, stagger: .16, ease: 'power2.out' }, t0 + .45);
+    }
+    tlCenas.to('.palco', { scale: .9, opacity: 0, duration: .4, ease: 'power2.in' }, total - .4);
+
+    // 3. As folhas: as duas andam em velocidades diferentes enquanto a secao passa.
+    gsap.timeline({ scrollTrigger: { trigger: '.folhas', start: 'top bottom', end: 'bottom top', scrub: true } })
+      .fromTo('.pilha .tras', { y: 90, rotate: -10 }, { y: -70, rotate: -4, ease: 'none' }, 0)
+      .fromTo('.pilha .frente', { y: 160, rotate: 7 }, { y: -120, rotate: 1, ease: 'none' }, 0);
+
+    // 4. Os passos: a secao trava; a foto do passo troca (a nova encaixa por cima) e o
+    //    texto do passo ativo entra enquanto o anterior sai.
+    var fotos = gsap.utils.toArray('.passos .foto');
+    var textos = gsap.utils.toArray('.passos .texto');
+    var marcas = gsap.utils.toArray('.passos .contador span');
+    var m = fotos.length;
+    var totalPassos = m + .5;
+    gsap.set(fotos.slice(1), { yPercent: 40, opacity: 0 });
+    gsap.set(textos.slice(1), { y: 16, opacity: 0 });
+    var tlPassos = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.passos', start: 'top top', end: '+=' + Math.round(totalPassos * 75) + '%',
+        pin: true, scrub: .5, anticipatePin: 1,
+        onUpdate: function(st){
+          var i = Math.max(0, Math.min(m - 1, Math.floor(st.progress * totalPassos - .35)));
+          marcas.forEach(function(p, k){ p.classList.toggle('ativa', k === i); });
+        }
+      }
+    });
+    for (var j = 1; j < m; j++) {
+      tlPassos.to(textos[j - 1], { y: -12, opacity: 0, duration: .25, ease: 'power2.in' }, j)
+        .to(fotos[j], { yPercent: 0, opacity: 1, duration: .55, ease: 'power3.out' }, j)
+        .to(fotos[j - 1], { scale: .94, opacity: 0, duration: .5, ease: 'power2.inOut' }, j + .08)
+        .fromTo(textos[j].querySelector('h3 .palavra'), { fontVariationSettings: '"wdth" 75' }, { fontVariationSettings: '"wdth" 100', duration: .5, ease: 'power2.out' }, j + .25)
+        .to(textos[j], { y: 0, opacity: 1, duration: .3, ease: 'power2.out' }, j + .3);
+    }
+    tlPassos.to({}, { duration: totalPassos - tlPassos.duration() });
+
+    // 5. O preco: no desktop a secao trava e o numero cresce ate o tamanho de cartaz; a oferta
+    //    encaixa ao lado. No celular a secao e mais alta que a tela, entao nao trava.
+    gsap.set('.preco-gigante', { scale: .28, transformOrigin: '0% 50%' });
+    gsap.set('.oferta', { xPercent: desktop ? 40 : 0, yPercent: desktop ? 0 : 30, opacity: 0 });
+    gsap.timeline({ scrollTrigger: desktop
+        ? { trigger: '.capitulo-preco', start: 'top top', end: '+=150%', pin: true, scrub: .6, anticipatePin: 1 }
+        : { trigger: '.capitulo-preco', start: 'top 80%', end: 'top 15%', scrub: .6 } })
+      .to('.preco-gigante', { scale: 1, duration: 1, ease: 'power2.out' }, 0)
+      .to('.oferta', { xPercent: 0, yPercent: 0, opacity: 1, duration: .6, ease: 'power3.out' }, .55)
+      .to({}, { duration: .4 });
+
+    // 6. O fecho: a foto da academia fica pra tras e o bloco entra, uma vez.
+    gsap.to('.fecho-foto img', { yPercent: 14, ease: 'none', scrollTrigger: { trigger: '.fecho', start: 'top bottom', end: 'bottom top', scrub: true } });
+    gsap.from('.fecho .bloco', { yPercent: 14, opacity: 0, duration: .9, ease: 'power3.out',
+      scrollTrigger: { trigger: '.fecho', start: 'top 80%', once: true } });
+
+    window.addEventListener('load', function(){ ScrollTrigger.refresh(); });
+  }
+})();
 </script>
 </body>
 </html>

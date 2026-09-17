@@ -6,3 +6,5 @@ COPY index.html /usr/share/nginx/html/ofertawhats/index.html
 COPY assets/ /usr/share/nginx/html/ofertawhats/assets/
 # Página de retorno do checkout por cartão (Asaas manda o pagador pra cá).
 COPY obrigado/index.html /usr/share/nginx/html/ofertawhats/obrigado/index.html
+# Página de planos (teste de porta falsa do semestral, 09/2026).
+COPY planos/index.html /usr/share/nginx/html/ofertawhats/planos/index.html

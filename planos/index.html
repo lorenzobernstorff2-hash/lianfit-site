@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Planos LianFit: mensal R$ 19,90 ou semestral R$ 99,90</title>
+<meta name="description" content="O mesmo LianFit, dois jeitos de pagar: R$ 19,90 por mês sem fidelidade, ou R$ 99,90 por seis meses com um mês de graça.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://lianfit.com.br/ofertawhats/planos/">
+<meta name="theme-color" content="#F5F1E8">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lianfit.com.br/ofertawhats/planos/">
+<meta property="og:site_name" content="LianFit">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="LianFit: mês a mês, ou seis meses de uma vez">
+<meta property="og:description" content="R$ 19,90 por mês sem fidelidade, ou R$ 99,90 por seis meses com um mês de graça.">
+<meta property="og:image" content="https://lianfit.com.br/ofertawhats/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LianFit: mês a mês, ou seis meses de uma vez">
+<meta name="twitter:description" content="R$ 19,90 por mês sem fidelidade, ou R$ 99,90 por seis meses com um mês de graça.">
+<meta name="twitter:image" content="https://lianfit.com.br/ofertawhats/assets/og.png">
+
+<link rel="icon" href="../assets/simbolo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preload" href="../assets/archivo-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+<!-- Meta Pixel: os mesmos dois conjuntos de dados da home (ver comentario em ../index.html). -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('set','autoConfig',false,'4529677620612420');
+fbq('init','4529677620612420');
+fbq('set','autoConfig',false,'1631513614991071');
+fbq('init','1631513614991071');
+fbq('track','PageView');
+</script>
+
+<style>
+@font-face{font-family:Archivo;src:url(../assets/archivo-var-latin.woff2)format("woff2");
+ font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:"Plex Mono";src:url(../assets/plexmono-400-latin.woff2)format("woff2");
+ font-weight:400;font-display:swap}
+@font-face{font-family:"Plex Mono";src:url(../assets/plexmono-600-latin.woff2)format("woff2");
+ font-weight:600;font-display:swap}
+
+/* A pagina tem um tema so, o do PDF: papel claro, blocos NOITE com o canto cortado
+   (o "encaixe" da marca), Archivo no texto, Plex Mono so nos numeros, violeta como
+   unico acento. Sem raio de canto em nada: a geometria da pagina e o chanfro. */
+:root{
+ --papel:#F5F1E8; --tinta:#0F1420; --noite:#16233B; --violeta:#6B4FB6; --cinza:#5B6573;
+ --bloco-texto:#F5F1E8; --bloco-suave:rgba(245,241,232,.72);
+ --linha:rgba(15,20,32,.16); --linha-bloco:rgba(245,241,232,.22);
+ --erro:#FFB4A8; --larg:1080px; --chanfro:28px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--papel);color:var(--tinta);
+ font-family:Archivo,system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+ font-size:17px;line-height:1.5;font-synthesis:none}
+img,svg{max-width:100%;display:block;height:auto}
+a{color:inherit}
+.env{width:min(100% - 40px,var(--larg));margin-inline:auto}
+.mono{font-family:"Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+h1,h2,h3{line-height:1.05;letter-spacing:-.025em;font-weight:800}
+h1{font-size:clamp(2.1rem,5.2vw,3.5rem);max-width:15ch;text-wrap:balance}
+h2{font-size:clamp(1.65rem,3.6vw,2.4rem);max-width:20ch;text-wrap:balance}
+h3{font-size:1.5rem;font-weight:700;letter-spacing:-.015em}
+p{max-width:62ch}
+.encaixe{clip-path:polygon(0 0,calc(100% - var(--chanfro)) 0,100% var(--chanfro),100% 100%,0 100%)}
+
+/* topo */
+header{border-bottom:1px solid var(--linha);background:var(--papel)}
+header .env{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+header img{height:28px;width:auto}
+header a.volta{font-size:.95rem;font-weight:500;color:var(--cinza);text-decoration:none;white-space:nowrap}
+header a.volta:hover{color:var(--tinta)}
+
+/* hero: a decisao inteira na primeira tela */
+.hero{padding:44px 0 24px}
+.hero p{font-size:clamp(1.05rem,2vw,1.25rem);color:var(--cinza);margin-top:14px;max-width:44ch}
+
+/* os dois planos: mesmo peso, mesmo bloco. O teste mede preferencia, nao pode induzir. */
+.planos{padding:12px 0 0}
+.grade-planos{display:grid;grid-template-columns:1fr;gap:16px}
+.plano{background:var(--noite);color:var(--bloco-texto);padding:28px 26px 26px;position:relative}
+.plano h3{margin-bottom:18px}
+.preco{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.preco b{font-family:"Plex Mono",monospace;font-weight:600;font-size:clamp(2.3rem,6vw,3rem);
+ letter-spacing:-.04em;line-height:1}
+.preco span{font-family:"Plex Mono",monospace;font-size:1rem;color:var(--bloco-suave)}
+.plano .equiv{margin-top:12px;color:var(--bloco-suave);font-size:1rem;min-height:3em}
+.plano .equiv strong{color:var(--bloco-texto);font-weight:600}
+.cta{display:flex;align-items:center;justify-content:center;width:100%;margin-top:22px;
+ background:var(--violeta);color:#fff;text-decoration:none;font:inherit;font-weight:700;font-size:1.05rem;
+ padding:17px 22px;border:0;cursor:pointer;white-space:nowrap;
+ transition:filter .15s ease,transform .1s ease}
+.cta:hover{filter:brightness(1.1)}
+.cta:active{transform:translateY(1px)}
+.cta:focus-visible{outline:3px solid var(--papel);outline-offset:3px}
+.cta[disabled]{opacity:.7;cursor:progress}
+.plano .nota{margin-top:12px;font-size:.9rem;color:var(--bloco-suave)}
+
+/* formulario do semestral: aparece no lugar do botao, dentro do mesmo bloco */
+.form-wrap{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .3s ease,opacity .25s ease}
+.form-wrap.aberto{grid-template-rows:1fr;opacity:1}
+.form-wrap > div{overflow:hidden}
+.form-wrap form{display:grid;gap:14px;padding-top:6px}
+.campo{display:grid;gap:6px}
+.campo label{font-size:.9rem;font-weight:500}
+.campo input{font:inherit;font-size:1.05rem;padding:13px 14px;border:1px solid var(--linha-bloco);
+ background:var(--papel);color:var(--tinta);width:100%}
+.campo input::placeholder{color:#7A8493}
+.campo input:focus{outline:3px solid var(--violeta);outline-offset:1px;border-color:transparent}
+.campo input[aria-invalid="true"]{border-color:var(--erro);box-shadow:inset 0 0 0 1px var(--erro)}
+.campo .ajuda{font-size:.85rem;color:var(--bloco-suave)}
+.campo .erro{font-size:.9rem;color:var(--erro);display:none}
+.campo .erro.mostra{display:block}
+.form-wrap .cta{margin-top:4px}
+.pote{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+
+/* revelacao (a porta falsa) */
+.revela{display:none;margin-top:6px;border-top:1px solid var(--linha-bloco);padding-top:18px}
+.revela.mostra{display:block}
+.revela h4{font-size:1.3rem;font-weight:700;letter-spacing:-.015em;margin-bottom:8px}
+.revela p{color:var(--bloco-suave);font-size:1rem}
+
+/* o que os dois entregam: uma linha so, fora dos blocos, pra nao repetir lista em card */
+.iguais{padding:26px 0 0}
+.iguais p{font-size:1rem;color:var(--cinza);max-width:none}
+.iguais ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;margin-top:14px;
+ padding-top:16px;border-top:1px solid var(--linha)}
+.iguais li{font-weight:500;font-size:1rem;padding-left:18px;position:relative}
+.iguais li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:2px;background:var(--violeta)}
+
+/* o que chega: as folhas reais do PDF */
+.folhas{padding:72px 0 8px}
+.folhas .intro p{margin-top:12px;color:var(--cinza);font-size:1.05rem;max-width:52ch}
+.grade-folhas{display:grid;grid-template-columns:1fr;gap:28px;margin-top:32px}
+.grade-folhas figure{margin:0}
+.grade-folhas img{width:100%;box-shadow:0 18px 40px -18px rgba(22,35,59,.45)}
+.grade-folhas figcaption{margin-top:12px;font-size:.95rem;color:var(--cinza);max-width:40ch}
+
+/* perguntas */
+.perguntas{padding:72px 0 80px}
+.perguntas .lista{margin-top:22px;border-top:1px solid var(--linha)}
+details{border-bottom:1px solid var(--linha);padding:18px 0}
+summary{cursor:pointer;font-weight:600;font-size:1.08rem;list-style:none;
+ display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:"Plex Mono",monospace;color:var(--violeta);font-size:1.4rem;line-height:1;font-weight:600}
+details[open] summary::after{content:"-"}
+details p{margin-top:10px;color:var(--cinza);max-width:64ch;font-size:1rem}
+
+/* rodape */
+footer{border-top:1px solid var(--linha);padding:36px 0 44px;font-size:.9rem;color:var(--cinza)}
+footer img{height:24px;width:auto;margin-bottom:18px}
+footer p{max-width:74ch;margin-top:6px}
+footer .aviso{margin-top:18px;line-height:1.55}
+footer b{color:var(--tinta);font-weight:600}
+
+@media(min-width:820px){
+ .hero{padding:64px 0 28px}
+ .grade-planos{grid-template-columns:1fr 1fr;gap:22px}
+ .grade-folhas{grid-template-columns:1fr 1fr;gap:36px}
+ .iguais ul{grid-template-columns:repeat(4,1fr)}
+ .folhas{padding:96px 0 8px}
+ .perguntas{padding:88px 0 96px}
+}
+@media(prefers-reduced-motion:reduce){
+ .form-wrap,.cta{transition:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="env">
+    <a href="../" aria-label="LianFit"><img src="../assets/lockup-noite.svg" alt="LianFit"></a>
+    <a class="volta" href="../">Como funciona</a>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="env">
+    <h1>Mês a mês, ou seis meses de uma vez.</h1>
+    <p>O LianFit é o mesmo nos dois. O que muda é quanto tu fecha agora e quanto sai por mês.</p>
+  </div>
+</section>
+
+<section class="planos" id="planos">
+  <div class="env">
+    <div class="grade-planos">
+
+      <article class="plano encaixe" id="plano-mensal">
+        <h3>Mensal</h3>
+        <p class="preco"><b>R$ 19,90</b><span>por mês</span></p>
+        <p class="equiv">Sem fidelidade. Cancela na própria conversa, quando quiser.</p>
+        <a class="cta" data-plano="mensal" href="https://wa.me/5547996182395?text=Ol%C3%A1%2C%20quero%20come%C3%A7ar%20no%20LianFit%20no%20plano%20mensal">Começar no WhatsApp</a>
+        <p class="nota">A conversa começa agora, sem app e sem login.</p>
+      </article>
+
+      <article class="plano encaixe" id="plano-semestral">
+        <h3>Semestral</h3>
+        <p class="preco"><b>R$ 99,90</b><span>por 6 meses</span></p>
+        <p class="equiv">Sai por <strong>R$ 16,65 por mês</strong>. Seis meses pagando cinco: um mês de graça.</p>
+        <button class="cta" type="button" id="btn-semestral" data-plano="semestral">Quero o semestral</button>
+        <p class="nota" id="nota-semestral">Pagamento único, por Pix ou cartão.</p>
+
+        <div class="form-wrap" id="form-semestral">
+          <div>
+            <form id="form-cadastro" novalidate>
+              <div class="campo">
+                <label for="campo-nome">Teu nome</label>
+                <input type="text" name="nome" id="campo-nome" autocomplete="name" maxlength="80" required>
+              </div>
+              <div class="campo">
+                <label for="campo-whatsapp">Teu WhatsApp com DDD</label>
+                <input type="tel" name="whatsapp" id="campo-whatsapp" inputmode="numeric" autocomplete="tel" placeholder="47 99999-9999" maxlength="20" required aria-describedby="ajuda-whatsapp erro-form">
+                <span class="ajuda" id="ajuda-whatsapp">Só pra te chamar sobre o semestral.</span>
+                <span class="erro" id="erro-form" role="alert">Confere o nome e o número com DDD.</span>
+              </div>
+              <label class="pote" aria-hidden="true">Site<input type="text" name="site" tabindex="-1" autocomplete="off"></label>
+              <button class="cta" type="submit" id="btn-enviar">Reservar vaga</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="revela" id="revela-semestral" role="status" tabindex="-1">
+          <h4>Vaga reservada.</h4>
+          <p>As vagas do semestral estão sendo liberadas aos poucos. A gente te chama no WhatsApp em até 48 horas. Se quiser começar hoje, o mensal já está aberto ao lado.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="iguais">
+      <p>Nos dois planos, a mesma coisa:</p>
+      <ul>
+        <li>Treino e dieta em PDF, montados pra ti</li>
+        <li>Ajuste ilimitado, 24 horas por dia</li>
+        <li>Foto do prato vira calorias e proteína</li>
+        <li>Plano novo a cada 28 dias</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="folhas">
+  <div class="env">
+    <div class="intro">
+      <h2>Isto é o que chega no teu WhatsApp.</h2>
+      <p>Duas folhas: o treino de um lado, a comida do dia do outro. Em gramas, com as trocas já calculadas.</p>
+    </div>
+    <div class="grade-folhas">
+      <figure>
+        <img src="../assets/plano-treino.png" width="840" height="1192" alt="Folha de treino do LianFit: um card por dia, com exercício, séries, repetições e descanso" loading="lazy">
+        <figcaption>A folha do treino: um card por dia, com série, repetição e descanso.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/plano-dieta.png" width="840" height="1192" alt="Folha de dieta do LianFit: meta do dia em cima e refeições em gramas com trocas embaixo" loading="lazy">
+        <figcaption>A folha da comida: a meta do dia em cima, as refeições embaixo, as trocas já feitas.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="perguntas">
+  <div class="env">
+    <h2>O que costumam perguntar antes.</h2>
+    <div class="lista">
+      <details><summary>É uma IA mesmo?</summary>
+        <p>É, e a gente não esconde. Quem responde no WhatsApp é uma IA. É por isso que ela está acordada às onze da noite e responde na hora.</p></details>
+      <details><summary>O semestral tem algo a mais que o mensal?</summary>
+        <p>Não. É o mesmo acompanhamento. Quem fecha seis meses paga menos por mês, só isso.</p></details>
+      <details><summary>Isso substitui nutricionista ou personal?</summary>
+        <p>Não. O LianFit é acompanhamento de treino e alimentação assistido por inteligência artificial. Não faz diagnóstico, não prescreve tratamento e não substitui consulta com profissional de saúde.</p></details>
+      <details><summary>Como eu cancelo o mensal?</summary>
+        <p>Escrevendo na mesma conversa. Sem ligação, sem formulário, sem fidelidade.</p></details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="env">
+    <img src="../assets/lockup-noite.svg" alt="LianFit">
+    <p>LianFit é um serviço da <b>Orion Tecnologia</b>, CNPJ 64.512.751/0001-70.</p>
+    <p>© 2026 Orion Tecnologia. Todos os direitos reservados.</p>
+    <p class="aviso">O LianFit oferece acompanhamento de treino e alimentação assistido por inteligência artificial. <b>Não substitui consulta, diagnóstico ou tratamento</b> médico, nutricional ou de educação física, e não promete resultado de emagrecimento ou ganho de massa. Se tu tem alguma condição de saúde, está gestante ou usa medicação contínua, fala com um profissional antes de começar. Ao iniciar a conversa no WhatsApp ou deixar teu contato, tu concorda que os dados informados sejam usados para montar e ajustar o teu plano e para a gente te chamar sobre o plano escolhido.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Registro de interesse: cada clique num plano e cada cadastro do semestral vira
+  // uma linha em `interesse_planos` (Supabase do LianFit). A chave abaixo e a
+  // PUBLICAVEL (feita pra navegador) e a tabela so aceita INSERT: ler, editar ou
+  // apagar por ela nao passa. E o que mede o teste de porta falsa do semestral.
+  var SUPABASE_URL = 'https://jzeeexnmdlzgliusvusf.supabase.co';
+  var SUPABASE_KEY = 'sb_publishable_RUtnQHhsmJcdYtNCWJAK7Q_dtNZLx1Y';
+  var PRECO = { mensal: 1990, semestral: 9990 };
+
+  function sessao(){
+    try {
+      var s = sessionStorage.getItem('lf_sessao');
+      if (!s) {
+        s = (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
+          : String(Date.now()) + '-' + Math.random().toString(16).slice(2);
+        sessionStorage.setItem('lf_sessao', s);
+      }
+      return s;
+    } catch (e) { return 'sem-sessao'; }
+  }
+
+  function origem(){
+    var p = new URLSearchParams(location.search);
+    var partes = [];
+    ['utm_source','utm_medium','utm_campaign','utm_content','fbclid'].forEach(function(k){
+      if (p.get(k)) partes.push(k + '=' + p.get(k));
+    });
+    if (document.referrer) partes.push('ref=' + document.referrer);
+    return partes.join('&').slice(0, 480);
+  }
+
+  function registrar(evento, plano, extra){
+    var corpo = Object.assign({
+      evento: evento,
+      plano: plano,
+      preco_cents: PRECO[plano],
+      sessao: sessao(),
+      origem: origem(),
+      user_agent: (navigator.userAgent || '').slice(0, 280)
+    }, extra || {});
+    if (SUPABASE_KEY.indexOf('__') === 0) return Promise.resolve(false); // previa sem chave: nao grava
+    return fetch(SUPABASE_URL + '/rest/v1/interesse_planos', {
+      method: 'POST',
+      keepalive: true,
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': 'Bearer ' + SUPABASE_KEY,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(corpo)
+    }).then(function(r){ return r.ok; }).catch(function(){ return false; });
+  }
+
+  function pixel(nome, dados){
+    if (window.fbq) { try { fbq('trackCustom', nome, dados); } catch (e) {} }
+  }
+
+  // Mensal: registra o clique e deixa o link seguir pro WhatsApp (keepalive segura o POST).
+  var linkMensal = document.querySelector('[data-plano="mensal"]');
+  linkMensal.addEventListener('click', function(){
+    pixel('PlanoClique', { plano: 'mensal' });
+    if (window.fbq) fbq('track', 'Contact');
+    registrar('clique_mensal', 'mensal');
+  });
+
+  // Semestral: o clique abre o formulario (a porta). O cadastro e o compromisso.
+  var btn = document.getElementById('btn-semestral');
+  var wrap = document.getElementById('form-semestral');
+  var nota = document.getElementById('nota-semestral');
+  var form = document.getElementById('form-cadastro');
+  var erro = document.getElementById('erro-form');
+  var revela = document.getElementById('revela-semestral');
+  var enviar = document.getElementById('btn-enviar');
+  var campoNome = document.getElementById('campo-nome');
+  var campoZap = document.getElementById('campo-whatsapp');
+  var jaClicou = false;
+
+  btn.addEventListener('click', function(){
+    if (!jaClicou) {
+      jaClicou = true;
+      pixel('PlanoClique', { plano: 'semestral' });
+      registrar('clique_semestral', 'semestral');
+    }
+    btn.hidden = true;
+    nota.textContent = 'Deixa teu contato que a gente fecha contigo pelo WhatsApp.';
+    wrap.classList.add('aberto');
+    campoNome.focus();
+  });
+
+  function soDigitos(v){ return (v || '').replace(/\D/g, ''); }
+
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    if (form.elements.site.value) return; // pote de mel: robo preencheu o campo escondido
+    var nome = campoNome.value.trim();
+    var zap = soDigitos(campoZap.value);
+    if ((zap.length === 12 || zap.length === 13) && zap.indexOf('55') === 0) zap = zap.slice(2);
+    var nomeOk = nome.length >= 2;
+    var zapOk = zap.length === 10 || zap.length === 11;
+    campoNome.setAttribute('aria-invalid', nomeOk ? 'false' : 'true');
+    campoZap.setAttribute('aria-invalid', zapOk ? 'false' : 'true');
+    if (!nomeOk || !zapOk) {
+      erro.classList.add('mostra');
+      (nomeOk ? campoZap : campoNome).focus();
+      return;
+    }
+    erro.classList.remove('mostra');
+    enviar.disabled = true;
+    enviar.textContent = 'Reservando...';
+    registrar('cadastro_semestral', 'semestral', { nome: nome.slice(0, 80), whatsapp: '55' + zap })
+      .then(function(){
+        pixel('PlanoCadastro', { plano: 'semestral' });
+        wrap.classList.remove('aberto');
+        nota.hidden = true;
+        revela.classList.add('mostra');
+        revela.focus();
+      });
+  });
+})();
+</script>
+</body>
+</html>
