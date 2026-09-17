@@ -1,5 +1,8 @@
 FROM nginx:1.27-alpine
 
+# Cabeçalhos de cache: HTML sempre revalidado, arquivos estáticos por um dia.
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 # Traefik entrega o path /ofertawhats ao container sem strippar o prefixo — por isso
 # os arquivos moram num diretorio com esse nome, e nao na raiz do html.
 COPY index.html /usr/share/nginx/html/ofertawhats/index.html
